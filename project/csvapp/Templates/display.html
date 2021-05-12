@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Metrics View</title>
+</head>
+<body>
+
+
+{% if metrics %}
+<table>
+  <tbody>
+    <tr>
+      <th>ID</th>
+      {% for metric in Metrics %}<td>{{ metric.id }}</td>{% endfor %}
+    </tr>
+    <tr>
+      <th>Timestamp</th>
+      {% for metric in Metrics %}<td>{{ metric.timestamp }}</td>{% endfor %}
+    </tr>
+    <tr>
+      <th>Temperature</th>
+      {% for metric in Metrics %}<td>{{ metric.temperature }}</td>{% endfor %}
+    </tr>
+   <tr>
+      <th>Duration</th>
+      {% for metric in Metrics %}<td>{{ metric.duration }}</td>{% endfor %}
+    </tr>
+  </tbody>
+</table>
+
+{% else %}
+    <p>No data is available.</p>
+{% endif %}
+
+</body>
+
+</html>
